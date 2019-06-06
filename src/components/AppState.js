@@ -5,7 +5,7 @@ const AppState = {
   },
   logout() {
     this.loggedIn = false;
-  },
+  }
 };
 
 export default AppState;

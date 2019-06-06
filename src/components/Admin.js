@@ -14,7 +14,9 @@ export default class Admin extends React.Component {
     return AppState.loggedIn ? (
       <div>
         <h1>Admin Component</h1>
-        <button onClick={this.logout.bind(this)} type="button">Logout</button>
+        <button onClick={this.logout.bind(this)} type="button">
+          Logout
+        </button>
       </div>
     ) : (
       <Redirect to="/login" />

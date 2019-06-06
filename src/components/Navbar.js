@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,10 +18,7 @@ export default function Navbar({ isOpen, handleDrawerOpen }) {
   return (
     <AppBar
       position="absolute"
-      className={clsx(
-        classes.appBar,
-        isOpen && classes.appBarShift,
-      )}
+      className={clsx(classes.appBar, isOpen && classes.appBarShift)}
     >
       <Toolbar className={classes.toolbar}>
         <IconButton
@@ -42,7 +40,7 @@ export default function Navbar({ isOpen, handleDrawerOpen }) {
           noWrap
           className={classes.title}
         >
-                Dashboard
+          Dashboard
         </Typography>
         <IconButton color="inherit">
           <Badge badgeContent={4} color="secondary">
@@ -51,6 +49,10 @@ export default function Navbar({ isOpen, handleDrawerOpen }) {
         </IconButton>
       </Toolbar>
     </AppBar>
-
   );
 }
+
+Navbar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  handleDrawerOpen: PropTypes.func.isRequired,
+};
