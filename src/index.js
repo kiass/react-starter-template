@@ -6,12 +6,12 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
 const theme = createMuiTheme({});
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <App />
-  </ThemeProvider>, document.getElementById('root'),
+  </ThemeProvider>,
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

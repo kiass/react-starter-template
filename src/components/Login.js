@@ -1,21 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Prompt } from "react-router-dom";
-import AppState from "./AppState";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Prompt } from 'react-router-dom';
+import AppState from './AppState';
 
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      password: "",
-      showPromptOnNav: false
+      password: '',
+      showPromptOnNav: false,
     };
   }
 
   savePassword(event) {
     this.setState({
       password: event.target.value,
-      showPromptOnNav: event.target.value.length > 0
+      showPromptOnNav: event.target.value.length > 0,
     });
   }
 
@@ -23,11 +23,11 @@ export default class Login extends React.Component {
     const { password } = this.state;
     const { history } = this.props;
     event.preventDefault();
-    if (password === "password") {
+    if (password === 'password') {
       AppState.login();
-      history.replace("/admin");
+      history.replace('/admin');
     } else {
-      alert("Password is wrong.");
+      alert('Password is wrong.');
     }
   }
 
@@ -54,5 +54,5 @@ export default class Login extends React.Component {
 }
 
 Login.propTypes = {
-  history: PropTypes.func.isRequired
+  history: PropTypes.func.isRequired,
 };
